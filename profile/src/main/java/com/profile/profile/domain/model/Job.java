@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "job")
+@Table(name = "jobbanele")
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,12 +18,11 @@ public class Job {
     @NotBlank
     private String end;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private EmployeeProfile employeeProfile;
 
     public Job() {
-
     }
 
     public Job(long jobId, String jobTitle, double salary, String start, String end, EmployeeProfile employeeProfile) {
