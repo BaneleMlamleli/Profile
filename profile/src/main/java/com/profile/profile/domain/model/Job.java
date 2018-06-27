@@ -81,4 +81,16 @@ public class Job {
     public void setEnd(String end) {
         this.end = end;
     }
+
+    @Override
+    public String toString() {
+        return "Job{" +
+                "jobId=" + jobId +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", salary=" + salary +
+                ", start='" + start + '\'' +
+                ", end='" + end + '\'' +
+                ", employeeProfile=" + employeeProfile +
+                '}';
+    }
 }

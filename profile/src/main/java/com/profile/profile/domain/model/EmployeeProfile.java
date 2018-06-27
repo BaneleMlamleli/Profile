@@ -140,4 +140,21 @@ public class EmployeeProfile {
     public void setAreaCode(int areaCode) {
         this.areaCode = areaCode;
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeProfile{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", gender='" + gender + '\'' +
+                ", academicLevel='" + academicLevel + '\'' +
+                ", nextOfKin='" + nextOfKin + '\'' +
+                ", location='" + location + '\'' +
+                ", dob='" + dob + '\'' +
+                ", telephoneNumber=" + telephoneNumber +
+                ", areaCode=" + areaCode +
+                ", job=" + job +
+                '}';
+    }
 }
