@@ -10,12 +10,9 @@ public class EmployeeProfileFactory {
 
 
     public EmployeeProfile buildEmployee(EmployeeModel employeeModel){
-        Job job = new Job();
-        job.setStart(employeeModel.getJob().getStart());
-        job.setEnd(employeeModel.getJob().getEnd());
-        job.setJobTitle(employeeModel.getJob().getJobTitle());
 
         EmployeeProfile employeeProfile = new EmployeeProfile();
+
         employeeProfile.setId(employeeModel.getId());
         employeeProfile.setName(employeeModel.getName());
         employeeProfile.setSurname(employeeModel.getSurname());
@@ -26,8 +23,7 @@ public class EmployeeProfileFactory {
         employeeProfile.setDob(employeeModel.getDob());
         employeeProfile.setTelephoneNumber(employeeModel.getTelephoneNumber());
         employeeProfile.setAreaCode(employeeModel.getAreaCode());
-        employeeProfile.setJob(job);
+
         return employeeProfile;
     }
-
 }
