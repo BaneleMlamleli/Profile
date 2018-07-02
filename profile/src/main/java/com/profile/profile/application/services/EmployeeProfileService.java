@@ -1,14 +1,14 @@
 package com.profile.profile.application.services;
 
-import com.profile.profile.application.models.EmployeeModel;
+import com.profile.profile.application.models.EmployeeProfileModel;
 import com.profile.profile.domain.model.EmployeeProfile;
 
 import java.util.List;
 
-public interface EmployeeService {
-    void createEmployeeProfile(EmployeeModel employeeModel);
+public interface EmployeeProfileService {
+    void createEmployeeProfile(EmployeeProfileModel employeeProfileModel);
     void readIndividualEmployeeProfile(String name);
     List<EmployeeProfile> readEmployeeProfiles();
-    void updateEmployeeProfile(EmployeeModel employeeModel);
+    void updateEmployeeProfile(EmployeeProfileModel employeeProfileModel);
     void deleteEmployeeProfile(long id);
 }

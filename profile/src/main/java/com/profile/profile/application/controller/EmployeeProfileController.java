@@ -1,7 +1,7 @@
 package com.profile.profile.application.controller;
 
-import com.profile.profile.application.models.EmployeeModel;
-import com.profile.profile.application.services.EmployeeService;
+import com.profile.profile.application.models.EmployeeProfileModel;
+import com.profile.profile.application.services.EmployeeProfileService;
 import com.profile.profile.domain.model.EmployeeProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +13,11 @@ import java.util.List;
 public class EmployeeProfileController {
 
     @Autowired
-    private EmployeeService employeeService;
+    private EmployeeProfileService employeeService;
 
     //PostMapping("/createEmployeeProfile")
     @RequestMapping(method=RequestMethod.POST, value="employee-profile/createEmployeeProfile")
-    public void createEmployeeProfile(@RequestBody EmployeeModel employeeProfileDetails){
+    public void createEmployeeProfile(@RequestBody EmployeeProfileModel employeeProfileDetails){
         employeeService.createEmployeeProfile(employeeProfileDetails);
     }
 
@@ -35,8 +35,8 @@ public class EmployeeProfileController {
 
     //@PutMapping("/updateEmployeeProfile/{id}")
     @RequestMapping(method=RequestMethod.PUT, value="employee-profile/updateEmployeeProfile/{id}")
-    public void updateEmployeeProfile(EmployeeModel updateEmployeeModel){
-        employeeService.updateEmployeeProfile(updateEmployeeModel);
+    public void updateEmployeeProfile(EmployeeProfileModel updateEmployeeProfileModel){
+        employeeService.updateEmployeeProfile(updateEmployeeProfileModel);
     }
 
     //@DeleteMapping("/individualEmployeeProfile/{id}")

@@ -1,7 +1,7 @@
 package com.profile.profile.application.services.Impl;
 
-import com.profile.profile.application.models.EmployeeModel;
-import com.profile.profile.application.services.EmployeeService;
+import com.profile.profile.application.models.EmployeeProfileModel;
+import com.profile.profile.application.services.EmployeeProfileService;
 import com.profile.profile.domain.factories.EmployeeProfileFactory;
 import com.profile.profile.domain.factories.JobProfileFactory;
 import com.profile.profile.domain.model.EmployeeProfile;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeProfileServiceImpl implements EmployeeProfileService {
 
     @Autowired
     private EmployeeProfileRepository employeeProfileRepository;
@@ -31,10 +31,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     //creating employee profile
     //This maps to a POST end-point
-    public void createEmployeeProfile(EmployeeModel employeeModel) {
-        Job job = this.jobProfileFactory.buildJob(employeeModel.getJob());
+    public void createEmployeeProfile(EmployeeProfileModel employeeProfileModel) {
+        Job job = this.jobProfileFactory.buildJob(employeeProfileModel.getJob());
         Job savedJob = jobRepository.save(job);
-        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(employeeModel, savedJob);
+        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(employeeProfileModel, savedJob);
         this.employeeProfileRepository.save(employeeProfile);
     }
 
@@ -61,10 +61,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     //updating
-    public void updateEmployeeProfile(EmployeeModel employeeModel){
-        Job job = this.jobProfileFactory.buildJob(employeeModel.getJob());
+    public void updateEmployeeProfile(EmployeeProfileModel employeeProfileModel){
+        Job job = this.jobProfileFactory.buildJob(employeeProfileModel.getJob());
         Job savedJob = jobRepository.save(job);
-        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(employeeModel, savedJob);
+        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(employeeProfileModel, savedJob);
         this.employeeProfileRepository.save(employeeProfile);
     }
 

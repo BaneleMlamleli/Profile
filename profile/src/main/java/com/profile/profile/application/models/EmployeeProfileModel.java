@@ -1,6 +1,6 @@
 package com.profile.profile.application.models;
 
-public class EmployeeModel {
+public class EmployeeProfileModel {
     private String name;
     private String surname;
     private String gender;
