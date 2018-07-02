@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -27,7 +28,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private JobProfileFactory jobProfileFactory;
 
+
     @Override
+    //creating employee profile
     public void createEmployeeProfile(CreateEmployeeModel createEmployeeModel) {
         Job job = this.jobProfileFactory.buildJob(createEmployeeModel.getJob());
         Job savedJob = jobRepository.save(job);
@@ -35,6 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeProfileRepository.save(employeeProfile);
     }
 
+    //retrieving all the employee profiles
     public List<EmployeeProfile> readEmployeeProfiles(){
         //An arraylist that will store all the employee profile details
         List<EmployeeProfile> employeeProfiles = new ArrayList<>();
@@ -43,6 +47,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 //            return employeeProfiles;
 //        }
         return employeeProfiles;
+    }
+
+    //retrieving individual employee profile
+    public void readIndividudalEmployeeProfile(String name){
+        //employeeProfileRepository.findById(id);
+        employeeProfileRepository.findAllByNameEquals(name);
     }
 
 }
