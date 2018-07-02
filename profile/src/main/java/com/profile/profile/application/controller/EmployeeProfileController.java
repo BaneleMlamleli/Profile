@@ -1,17 +1,27 @@
 package com.profile.profile.application.controller;
 
-import com.profile.profile.domain.repository.EmployeeProfileRepository;
-import com.profile.profile.domain.repository.JobRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import com.profile.profile.application.models.CreateEmployeeModel;
 
 @RestController
 @RequestMapping("employee-profile")
 public class EmployeeProfileController {
 
 
-    //@PostMapping
+    /*
+        @PostMapping – Handle HTTP POST Requests
+        @GetMapping – Handle HTTP Get Requests
+        @PutMapping – Handle HTTP Put Requests
+        @DeleteMapping – Handle HTTP Delete Requests
+     */
+    @PostMapping()
+    public void createEmployeeProfile(@RequestBody CreateEmployeeModel employeeProfileDetails){
+    }
+
+//    @GetMapping("/{id}")
+//    public CreateEmployeeModel getEmployeeProfile(@PathVariable("id") int id){
+//        return null;
+//    }
 
 }

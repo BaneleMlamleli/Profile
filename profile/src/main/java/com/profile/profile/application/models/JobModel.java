@@ -1,4 +1,4 @@
-package com.profile.profile.application.controller.model;
+package com.profile.profile.application.models;
 
 public class JobModel {
     private long jobId; //This is a primary key that will be automatically created and incremented by one

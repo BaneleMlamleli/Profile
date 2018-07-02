@@ -6,12 +6,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "employeeprofilebanele")
+@Table(name = "employeeprofile")
 @Data
 public class EmployeeProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;        //primary key that is auto generated
+    private long id;        //primary key that is auto generated
     @NotBlank
     private String name;
     @NotBlank
@@ -40,7 +40,7 @@ public class EmployeeProfile {
     }
 
     public EmployeeProfile(String name, String surname, String gender, String academicLevel,
-                           String nextOfKin, String location, String dob, long telephoneNumber, int id, int areaCode) {
+                           String nextOfKin, String location, String dob, long telephoneNumber, long id, int areaCode) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -125,7 +125,7 @@ public class EmployeeProfile {
         this.telephoneNumber = telephoneNumber;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

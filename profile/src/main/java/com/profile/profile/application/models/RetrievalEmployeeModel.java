@@ -1,6 +1,6 @@
-package com.profile.profile.application.controller.model;
+package com.profile.profile.application.models;
 
-public class EmployeeModel {
+public class RetrievalEmployeeModel {
     private int id;        //primary key that is auto generated
     private String name;
     private String surname;
