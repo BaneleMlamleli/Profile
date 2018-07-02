@@ -27,8 +27,8 @@ public class EmployeeProfile {
     @NotBlank
     private String dob;    // date of birth
     @NotBlank
-    private long telephoneNumber;
-    @NotBlank
+    private String telephoneNumber;
+
     private int areaCode;
 
     //
@@ -40,7 +40,7 @@ public class EmployeeProfile {
     }
 
     public EmployeeProfile(String name, String surname, String gender, String academicLevel,
-                           String nextOfKin, String location, String dob, long telephoneNumber, long id, int areaCode) {
+                           String nextOfKin, String location, String dob, String telephoneNumber, long id, int areaCode) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -117,11 +117,11 @@ public class EmployeeProfile {
         this.dob = dob;
     }
 
-    public long getTelephoneNumber() {
+    public String getTelephoneNumber() {
         return telephoneNumber;
     }
 
-    public void setTelephoneNumber(long telephoneNumber) {
+    public void setTelephoneNumber(String telephoneNumber) {
         this.telephoneNumber = telephoneNumber;
     }
 

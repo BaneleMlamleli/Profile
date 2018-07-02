@@ -11,14 +11,14 @@ public class Job {
     private long jobId; //This is a primary key that will be automatically created and incremented by one
     @NotBlank
     private String jobTitle;
-    @NotBlank
+
     private double salary;
     @NotBlank
     private String start;
     @NotBlank
     private String end;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private EmployeeProfile employeeProfile;
 

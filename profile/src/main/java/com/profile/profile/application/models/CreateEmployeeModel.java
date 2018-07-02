@@ -8,7 +8,7 @@ public class CreateEmployeeModel {
     private String nextOfKin;
     private String location;
     private String dob;    // date of birth
-    private long telephoneNumber;
+    private String telephoneNumber;
     private int areaCode;
     private JobModel job;
 
@@ -76,11 +76,11 @@ public class CreateEmployeeModel {
         this.dob = dob;
     }
 
-    public long getTelephoneNumber() {
+    public String getTelephoneNumber() {
         return telephoneNumber;
     }
 
-    public void setTelephoneNumber(long telephoneNumber) {
+    public void setTelephoneNumber(String telephoneNumber) {
         this.telephoneNumber = telephoneNumber;
     }
 
