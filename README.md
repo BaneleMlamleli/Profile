@@ -12,3 +12,9 @@ Dependencies
 - MySQL
 - Spring Web
 - Spring security
+
+Tools
+- IntelliJ IDEA
+- Maven
+- Spring Initializr(http://start.spring.io/)
+- Postman (https://www.getpostman.com/)
