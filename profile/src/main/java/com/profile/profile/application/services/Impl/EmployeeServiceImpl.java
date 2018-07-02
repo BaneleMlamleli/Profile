@@ -1,6 +1,6 @@
 package com.profile.profile.application.services.Impl;
 
-import com.profile.profile.application.models.CreateEmployeeModel;
+import com.profile.profile.application.models.EmployeeModel;
 import com.profile.profile.application.services.EmployeeService;
 import com.profile.profile.domain.factories.EmployeeProfileFactory;
 import com.profile.profile.domain.factories.JobProfileFactory;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -32,10 +31,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     //creating employee profile
     //This maps to a POST end-point
-    public void createEmployeeProfile(CreateEmployeeModel createEmployeeModel) {
-        Job job = this.jobProfileFactory.buildJob(createEmployeeModel.getJob());
+    public void createEmployeeProfile(EmployeeModel employeeModel) {
+        Job job = this.jobProfileFactory.buildJob(employeeModel.getJob());
         Job savedJob = jobRepository.save(job);
-        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(createEmployeeModel, savedJob);
+        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(employeeModel, savedJob);
         this.employeeProfileRepository.save(employeeProfile);
     }
 
@@ -62,10 +61,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     //updating
-    public void updateEmployeeProfile(CreateEmployeeModel createEmployeeModel){
-        Job job = this.jobProfileFactory.buildJob(createEmployeeModel.getJob());
+    public void updateEmployeeProfile(EmployeeModel employeeModel){
+        Job job = this.jobProfileFactory.buildJob(employeeModel.getJob());
         Job savedJob = jobRepository.save(job);
-        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(createEmployeeModel, savedJob);
+        EmployeeProfile employeeProfile = this.employeeProfileFactory.buildEmployee(employeeModel, savedJob);
         this.employeeProfileRepository.save(employeeProfile);
     }
 

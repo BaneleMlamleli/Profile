@@ -1,7 +1,6 @@
 package com.profile.profile.application.models;
 
-public class RetrievalEmployeeModel {
-    private int id;        //primary key that is auto generated
+public class EmployeeModel {
     private String name;
     private String surname;
     private String gender;
@@ -12,14 +11,6 @@ public class RetrievalEmployeeModel {
     private String telephoneNumber;
     private int areaCode;
     private JobModel job;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

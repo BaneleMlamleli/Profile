@@ -1,11 +1,10 @@
 package com.profile.profile.application.controller;
 
+import com.profile.profile.application.models.EmployeeModel;
 import com.profile.profile.application.services.EmployeeService;
 import com.profile.profile.domain.model.EmployeeProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import com.profile.profile.application.models.CreateEmployeeModel;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class EmployeeProfileController {
 
     //PostMapping("/createEmployeeProfile")
     @RequestMapping(method=RequestMethod.POST, value="employee-profile/createEmployeeProfile")
-    public void createEmployeeProfile(@RequestBody CreateEmployeeModel employeeProfileDetails){
+    public void createEmployeeProfile(@RequestBody EmployeeModel employeeProfileDetails){
         employeeService.createEmployeeProfile(employeeProfileDetails);
     }
 
@@ -36,7 +35,7 @@ public class EmployeeProfileController {
 
     //@PutMapping("/updateEmployeeProfile/{id}")
     @RequestMapping(method=RequestMethod.PUT, value="employee-profile/updateEmployeeProfile/{id}")
-    public void updateEmployeeProfile(CreateEmployeeModel updateEmployeeModel){
+    public void updateEmployeeProfile(EmployeeModel updateEmployeeModel){
         employeeService.updateEmployeeProfile(updateEmployeeModel);
     }
 
