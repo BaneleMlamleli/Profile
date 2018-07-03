@@ -16,4 +16,14 @@ public class JobProfileFactory {
         job.setEnd(jobModel.getEnd());
         return job;
     }
+
+    public JobModel buildJobModel(Job job) {
+        JobModel jobModel = new JobModel();
+        jobModel.setJobId(job.getJobId());
+        jobModel.setJobTitle(job.getJobTitle());
+        jobModel.setSalary(job.getSalary());
+        jobModel.setStart(job.getStart());
+        jobModel.setEnd(job.getEnd());
+        return jobModel;
+    }
 }

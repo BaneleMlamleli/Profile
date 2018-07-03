@@ -3,6 +3,7 @@ package com.profile.profile.application.controller;
 import com.profile.profile.application.models.EmployeeProfileModel;
 import com.profile.profile.application.services.EmployeeProfileService;
 import com.profile.profile.domain.model.EmployeeProfile;
+import com.profile.profile.domain.model.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,11 @@ public class EmployeeProfileController {
     @RequestMapping(method=RequestMethod.POST, value="employee-profile/createEmployeeProfile")
     public void createEmployeeProfile(@RequestBody EmployeeProfileModel employeeProfileDetails){
         employeeService.createEmployeeProfile(employeeProfileDetails);
+    }
+
+    @RequestMapping(method=RequestMethod.GET, value="employee-profile/allJobs")
+    public List<Job> readAllJobs(){
+        return employeeService.readAllJobs();
     }
 
     //GetMapping("/allEmployeeProfiles")

@@ -32,7 +32,7 @@ public class EmployeeProfile {
     private int areaCode;
 
     //
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "employeeProfile", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "employeeProfile", cascade = CascadeType.ALL)
     private Job job;
 
     public EmployeeProfile() {

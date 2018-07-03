@@ -50,6 +50,23 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService {
     }
 
     //Create a code to read the job as well!!!
+    @Override
+    //retrieving all the jobs
+    //This maps to a GET end-point
+    public List<Job> readAllJobs(){
+        List<Job> allJobs = new ArrayList<>();
+        Iterable<Job> listOfJobs = jobRepository.findAll();
+        listOfJobs.forEach(allJobs::add);
+        return allJobs;
+    }
+
+//    @Override
+//    //retrieving individual employee profile
+//    //This also maps to a GET end-point but with a specific employee profile
+//    public void readIndividualJobs(String jobTitle){
+//        //employeeProfileRepository.findById(id);
+//        jobRepository.findByJobTitle(jobTitle);
+//    }
 
     @Override
     //retrieving individual employee profile
