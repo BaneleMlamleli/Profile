@@ -46,7 +46,7 @@ public class EmployeeProfileController {
     }
 
     //@DeleteMapping("/individualEmployeeProfile/{id}")
-    @RequestMapping(method=RequestMethod.DELETE, value="employee-profile/individualEmployeeProfile/{id}")
+    @RequestMapping(method=RequestMethod.DELETE, value="employee-profile/deleteIndividualEmployeeProfile/{id}")
     public void deleteEmployeeProfile(@PathVariable("id") long id){
         employeeService.deleteEmployeeProfile(id);
     }
